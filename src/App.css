@@ -1,0 +1,21 @@
+.superheroList {
+    width: 50%;
+    margin: 50px 0 0 50px;
+}
+.superhero {
+    display: grid;
+    grid-template-columns: 40% 40% 20%;
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+.superheroForm {
+    width: 50%;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 100%;
+}
+
+.superheroFormSubmitButton {
+    margin-top: 10px;
+}
