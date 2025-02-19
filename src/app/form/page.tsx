@@ -3,6 +3,7 @@
 import type React from 'react';
 
 import { useState } from 'react';
+import Header from '../header/header';
 
 export interface Superhero {
   name: string;
@@ -46,56 +47,59 @@ export default function FormPage() {
   };
 
   return (
-    <main className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">Create Superhero</h1>
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <div>
-          <label htmlFor="name" className="block mb-1">
-            Name:
-          </label>
-          <input
-            type="text"
-            id="name"
-            value={formData.name}
-            onChange={(e) => handleChange({ [e.target.id]: e.target.value })}
-            className="w-full px-3 py-2 border rounded"
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="superpower" className="block mb-1">
-            Superpower:
-          </label>
-          <input
-            type="text"
-            id="superpower"
-            value={formData.superpower}
-            onChange={(e) => handleChange({ [e.target.id]: e.target.value })}
-            className="w-full px-3 py-2 border rounded"
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="humilityScore" className="block mb-1">
-            Humility Score:
-          </label>
-          <input
-            type="text"
-            id="humilityScore"
-            value={formData.humilityScore}
-            onChange={(e) => handleChange({ [e.target.id]: e.target.value })}
-            className="w-full px-3 py-2 border rounded"
-            required
-          />
-        </div>
-        <button
-          type="submit"
-          className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
-        >
-          Submit
-        </button>
-      </form>
-      {message && <p className="mt-4 text-green-600">{message}</p>}
-    </main>
+    <>
+      <Header />
+      <main className="container mx-auto p-4">
+        <h1 className="text-2xl font-bold mb-4">Create Superhero</h1>
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div>
+            <label htmlFor="name" className="block mb-1">
+              Name:
+            </label>
+            <input
+              type="text"
+              id="name"
+              value={formData.name}
+              onChange={(e) => handleChange({ [e.target.id]: e.target.value })}
+              className="w-full px-3 py-2 border rounded"
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="superpower" className="block mb-1">
+              Superpower:
+            </label>
+            <input
+              type="text"
+              id="superpower"
+              value={formData.superpower}
+              onChange={(e) => handleChange({ [e.target.id]: e.target.value })}
+              className="w-full px-3 py-2 border rounded"
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="humilityScore" className="block mb-1">
+              Humility Score:
+            </label>
+            <input
+              type="text"
+              id="humilityScore"
+              value={formData.humilityScore}
+              onChange={(e) => handleChange({ [e.target.id]: e.target.value })}
+              className="w-full px-3 py-2 border rounded"
+              required
+            />
+          </div>
+          <button
+            type="submit"
+            className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+          >
+            Submit
+          </button>
+        </form>
+        {message && <p className="mt-4 text-green-600">{message}</p>}
+      </main>
+    </>
   );
 }

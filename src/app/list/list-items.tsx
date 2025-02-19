@@ -19,7 +19,6 @@ export default function ListItems() {
           <p className="text-sm text-gray-600">{item.humilityScore}</p>
         </div>
       ))}
-    </div>  
-    
+    </div>
   );
 }
